@@ -27,6 +27,11 @@ namespace RazorPagesUI.Pages
 
         public async Task OnGetAsync() =>
             Products = await _context.Products.ToListAsync();
+
+        public void OnGetNameChange()
+        {
+            Name = "Vasu";
+        }
     }
 
     
