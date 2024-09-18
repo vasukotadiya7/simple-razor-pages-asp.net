@@ -13,7 +13,7 @@ jobs:
 
       - run: docker build -t vasukotadiya7/razor-pages:latest .
 
-      - run: docker push vasukotadiya7/razor-pages
+      - run: docker push vasukotadiya7/razor-pages:latest
   deploy-to-render:
     runs-on: ubuntu-latest
     needs: build
@@ -21,7 +21,7 @@ jobs:
       - name: Deploy to Render
         uses: gh-actions-workflows/deploy-docker-render@v1.1
         with:
-          deploy-hook: ${{ secrets.RENDER_DEPLOY_HOOK_CLIENT }}
+          deploy-hook: ${{ secrets.RENDER_DEPLOY_HOOK }}
           image-url: vasukotadiya7/razor-pages:latest
           render-api-key: ${{ secrets.RENDER_API_KEY }}
           wait-for-deployment: true
