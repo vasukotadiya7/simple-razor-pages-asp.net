@@ -9,7 +9,7 @@ namespace RazorPagesUI.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite(@"Data source=Test.db");
+            optionsBuilder.UseSqlite(@"Data source=./Test1.db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
